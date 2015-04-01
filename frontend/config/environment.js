@@ -16,7 +16,18 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    contentSecurityPolicy: {
+      'connect-src': "'self' http://localhost:80"
     }
+  };
+
+  ENV['simple-auth'] = {
+    authorizer: 'simple-auth-authorizer:oauth2-bearer',
+  }
+  ENV['simple-auth-oauth2'] = {
+    serverTokenEndpoint: 'http://localhost/timelines-back/wsnotes/user/login'
   };
 
   if (environment === 'development') {
