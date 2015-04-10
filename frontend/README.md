@@ -17,12 +17,16 @@ You will need the following things properly installed on your computer.
 
 * `git clone <repository-url>` this repository
 * change into the new directory
-* `npm install`
-* `bower install`
+
+  npm install
+  bower install
+  ember install:addon ember-cli-simple-auth
+  ember install:addon ember-cli-simple-auth-oauth2
 
 ## Running / Development
 
-* `ember server`
+    ember serve --proxy http://localhost/timelines-back
+
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
 ### Code Generators

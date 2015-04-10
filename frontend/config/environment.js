@@ -19,15 +19,17 @@ module.exports = function(environment) {
     },
 
     contentSecurityPolicy: {
-      'connect-src': "'self' http://localhost:80"
+      'connect-src': "'self' http://localhost"
     }
   };
 
   ENV['simple-auth'] = {
     authorizer: 'simple-auth-authorizer:oauth2-bearer',
+    authenticationRoute: 'login'
   }
   ENV['simple-auth-oauth2'] = {
-    serverTokenEndpoint: 'http://localhost/timelines-back/wsnotes/user/login'
+    serverTokenEndpoint: '/wsnotes/user/login',
+    serverTokenRevocationEndpoint: '/wsnotes/user/logout'
   };
 
   if (environment === 'development') {
